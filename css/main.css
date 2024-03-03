@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #aaaaaa;
+}
+
+nav, nav > a {
+    background-color: #222222;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+section {
+    margin: 25px auto;
+    width: fit-content;
+    min-width: 60%;
+    max-width: 80%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: #444444 0 0 2px;
+    border-radius: 15px;
+}
+
+.portfolio-link {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #222222;
+    border-radius: 5px;
+    min-width: fit-content;
+    max-width: 80%;
+    width: 175px;
+}
+
+
+
+.separator {
+    border-bottom: 1px solid #ccc; /* You can adjust the thickness, style, and color of the line */
+    margin: 20px 0; /* Adjust margin as needed */
+}
+
+footer {
+    display: flex;
+    background-color: #222222;
+    color: #fff;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
