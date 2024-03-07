@@ -4,23 +4,157 @@
     <meta charset="UTF-8">
     <title>Diseño Web Portfolio</title>
 
-    <link rel="stylesheet" href="css/main.css">
+    <!-- CSS styles for the web page -->
+    <style>
+        /* Styles for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #aaaaaa;
+        }
+
+        /* Styles for the video background */
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        /* Styles for the header */
+        header {
+            position: sticky;
+            top: 0;
+        }
+
+        /* Styles for the navigation bar */
+        nav, nav > a {
+            font-family: Arial, sans-serif;
+            font-size: large;
+            background-color: #222222;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        /* Styles for the sections */
+        section {
+            margin: 25px auto;
+            width: fit-content;
+            min-width: 60%;
+            max-width: 80%;
+            padding: 20px;
+            background-color: white;
+            box-shadow: #444444 0 0 2px;
+            border-radius: 15px;
+            transition: transform 0.6s cubic-bezier(0.32, 0, 0.67, 0);
+            font-size: large;
+        }
+
+        /* Styles for the portfolio links */
+        .portfolio-link {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #222222;
+            border-radius: 5px;
+            min-width: fit-content;
+            max-width: 80%;
+            width: 175px;
+        }
+
+        /* Styles for the form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        form > * {
+            margin: 10px 0;
+            min-width: 60%;
+            max-width: 80%;
+            width: fit-content;
+        }
+
+        form > input[type="email"], form > textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            height: fit-content;
+            font-size: large;
+        }
+
+        form > textarea {
+            min-height: 150px;
+        }
+
+        input[type="checkbox"] {
+            display: inline;
+            padding: 0;
+            width: fit-content;
+            min-width: fit-content;
+            max-width: fit-content;
+            margin: 1px;
+        }
+
+        form > input[type="submit"] {
+            background-color: #222222;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Styles for the separator */
+        .separator {
+            border-bottom: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        /* Styles for the footer */
+        footer {
+            display: flex;
+            background-color: #222222;
+            color: #fff;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body id="top">
 <header>
+    <!-- Navigation bar -->
     <nav>
         <a href="#top">Inicio</a> | <a href="#about">Acerca de</a> | <a href="#portfolio">Portfolio</a> | <a href="#contact">Contacto</a>
     </nav>
 </header>
 
 <main>
-    <!--    THIS TAKES SO LONG TO LOAD I DISABLED IT -->
+    <!-- Video background -->
     <video id="video-background" autoplay muted loop>
         <source src="files/video_asturias_reduced02.mp4" type="video/mp4">
     </video>
 
     <div class="container">
         <section id="about">
+            <!-- About section -->
             <h2>Acerca de:</h2>
             <div class="separator"></div>
             <p>Soy Bryan, estudiante en ESDAC-ESNE Asturias de videojuegos y esta es la primera entrega para la asignatura de diseño web.</p>
@@ -28,6 +162,7 @@
         </section>
 
         <section id="portfolio">
+            <!-- Portfolio section -->
             <h2>Portfolio:</h2>
             <div class="separator"></div>
             <h3>Prácticas:</h3>
@@ -94,8 +229,8 @@
             <a href="404.html" class="portfolio-link">En Docx</a>
 
         </section>
-
         <section id="contact">
+            <!-- Contact section -->
             <h2>Contacto:</h2>
             <div class="separator"></div>
             <form action="">
@@ -116,6 +251,7 @@
 </main>
 
 <footer>
+    <!-- Footer section -->
     <p><a href="https://github.com/BrainlessZhiv" id="profile">© 2024 Bryan Cueto Fernández</a></p>
 </footer>
 </body>
