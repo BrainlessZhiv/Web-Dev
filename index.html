@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Diseño Web Portfolio</title>
@@ -30,10 +31,12 @@
         header {
             position: sticky;
             top: 0;
+            z-index: 10;
         }
 
         /* Styles for the navigation bar */
-        nav, nav > a {
+        nav,
+        nav>a {
             font-family: Arial, sans-serif;
             font-size: large;
             background-color: #222222;
@@ -41,6 +44,18 @@
             padding: 10px;
             text-align: center;
             text-decoration: none;
+        }
+
+        nav>a:hover {
+            background-color: #fff;
+            color: #222222;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            height: fit-content;
+            padding: 0;
         }
 
         /* Styles for the sections */
@@ -53,14 +68,25 @@
             background-color: white;
             box-shadow: #444444 0 0 2px;
             border-radius: 15px;
-            transition: transform 0.6s cubic-bezier(0.32, 0, 0.67, 0);
             font-size: large;
+            transition: all 0.5s;
+        }
+
+        section:hover {
+            box-shadow: #444444 0 0 15px;
+            scale: 1.05;
+        }
+
+        .portfolio-link-container {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
         }
 
         /* Styles for the portfolio links */
         .portfolio-link {
             display: inline-block;
-            margin: 10px 0;
+            margin: 10px;
             padding: 10px;
             text-align: center;
             text-decoration: none;
@@ -80,14 +106,15 @@
             width: 100%;
         }
 
-        form > * {
+        form>* {
             margin: 10px 0;
             min-width: 60%;
             max-width: 80%;
             width: fit-content;
         }
 
-        form > input[type="email"], form > textarea {
+        form>input[type="email"],
+        form>textarea {
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
@@ -95,7 +122,7 @@
             font-size: large;
         }
 
-        form > textarea {
+        form>textarea {
             min-height: 150px;
         }
 
@@ -108,7 +135,7 @@
             margin: 1px;
         }
 
-        form > input[type="submit"] {
+        form>input[type="submit"] {
             background-color: #222222;
             color: #fff;
             border: none;
@@ -138,124 +165,146 @@
             text-decoration: none;
             margin: 0 10px;
         }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
     </style>
 </head>
+
 <body id="top">
-<header>
-    <!-- Navigation bar -->
-    <nav>
-        <a href="#top">Inicio</a> | <a href="#about">Acerca de</a> | <a href="#portfolio">Portfolio</a> | <a href="#contact">Contacto</a>
-    </nav>
-</header>
+    <header>
+        <!-- Navigation bar -->
+        <nav>
+            <a href="#top">Inicio</a>
+            <a href="#about">Acerca de</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </header>
 
-<main>
-    <!-- Video background -->
-    <video id="video-background" autoplay muted loop>
-        <source src="files/video_asturias_reduced02.mp4" type="video/mp4">
-    </video>
+    <main>
+        <!-- Video background -->
+        <video id="video-background" autoplay muted loop>
+            <source src="files/video_asturias_reduced02.mp4" type="video/mp4">
+        </video>
 
-    <div class="container">
-        <section id="about">
-            <!-- About section -->
-            <h2>Acerca de:</h2>
-            <div class="separator"></div>
-            <p>Soy Bryan, estudiante en ESDAC-ESNE Asturias de videojuegos y esta es la primera entrega para la asignatura de diseño web.</p>
-            <p>Mi experiencia en diseño web es mínima, sin embargo tengo experiencia en los lenguajes de programación C#, Java y Typescript</p>
-        </section>
+        <div class="container">
+            <section id="about">
+                <!-- About section -->
+                <h2>Acerca de:</h2>
+                <div class="separator"></div>
+                <p>Soy Bryan, estudiante en ESDAC-ESNE Asturias de videojuegos y esta es la primera entrega para la
+                    asignatura de diseño web.</p>
+                <p>Mi experiencia en diseño web es mínima, sin embargo tengo experiencia en los lenguajes de
+                    programación C#, Java y Typescript</p>
+            </section>
 
-        <section id="portfolio">
-            <!-- Portfolio section -->
-            <h2>Portfolio:</h2>
-            <div class="separator"></div>
-            <h3>Prácticas:</h3>
-            <h4>Práctica 1:</h4>
-            <p>Enunciado:</p>
-            <a href="files/2_VDJ_WEB_PRACTICA_1.pdf" class="portfolio-link">En formato PDF</a>
+            <section id="portfolio">
+                <!-- Portfolio section -->
+                <h2>Portfolio:</h2>
+                <div class="separator"></div>
+                <h3>Prácticas:</h3>
+                <h4>Práctica 1:</h4>
+                <p>Enunciado:</p>
+                <a href="files/2_VDJ_WEB_PRACTICA_1.pdf" class="portfolio-link">En formato PDF</a>
 
-            <p>Entrega: </p>
-            <a href="https://github.com/BrainlessZhiv/Web-Dev/archive/refs/heads/master.zip" class="portfolio-link">Archivo Zip</a>
-            <a href="https://github.com/BrainlessZhiv/Web-Dev" class="portfolio-link">Enlace a GitHub</a>
-            <a href="https://web.zhiv.works/" class="portfolio-link">Versión en vivo</a>
-
-            <p>Documentación: </p>
-            <a href="" class="portfolio-link">En formato PDF</a>
-<!--            <a href="" class="portfolio-link">En Markdown</a>-->
-            <a href="" class="portfolio-link">En Docx</a>
-
-            <div class="separator"></div>
-<!--        Próximas entregas -->
-
-<!--            <h4>Práctica 2:</h4>-->
-<!--            <p>Enunciado: </p>-->
-<!--            <a href="404.html" class="portfolio-link">En formato PDF</a>-->
-
-<!--            <p>Entrega: </p>-->
-<!--            <a href="404.html" class="portfolio-link">Archivo Zip</a>-->
-<!--            <a href="404.html" class="portfolio-link">Enlace a GitHub</a>-->
-<!--            <a href="404.html" class="portfolio-link">Versión en vivo</a>-->
-
-<!--            <p>Documentación: </p>-->
-<!--            <a href="404.html" class="portfolio-link">En formato PDF</a>-->
-<!--            <a href="404.html" class="portfolio-link">En Markdown</a>-->
-<!--            <a href="404.html" class="portfolio-link">En Docx</a>-->
-
-<!--            <div class="separator"></div>-->
-
-<!--            <h4>Práctica 3:</h4>-->
-<!--            <p>Enunciado: </p>-->
-<!--            <a href="404.html" class="portfolio-link">En formato PDF</a>-->
-
-<!--            <p>Entrega: </p>-->
-<!--            <a href="404.html" class="portfolio-link">Archivo Zip</a>-->
-<!--            <a href="404.html" class="portfolio-link">Enlace a GitHub</a>-->
-<!--            <a href="404.html" class="portfolio-link">Versión en vivo</a>-->
-
-<!--            <p>Documentación: </p>-->
-<!--            <a href="404.html" class="portfolio-link">En formato PDF</a>-->
-<!--            <a href="404.html" class="portfolio-link">En Markdown</a>-->
-<!--            <a href="404.html" class="portfolio-link">En Docx</a>-->
-
-<!--            <div class="separator"></div>-->
-
-<!--            <h4>Práctica 4:</h4>-->
-<!--            <p>Enunciado: </p>-->
-<!--            <a href="404.html" class="portfolio-link">En formato PDF</a>-->
-
-<!--            <p>Entrega: </p>-->
-<!--            <a href="404.html" class="portfolio-link">Archivo Zip</a>-->
-<!--            <a href="404.html" class="portfolio-link">Enlace a GitHub</a>-->
-<!--            <a href="404.html" class="portfolio-link">Versión en vivo</a>-->
-
-<!--            <p>Documentación: </p>-->
-<!--            <a href="404.html" class="portfolio-link">En formato PDF</a>-->
-<!--            <a href="404.html" class="portfolio-link">En Markdown</a>-->
-<!--            <a href="404.html" class="portfolio-link">En Docx</a>-->
-
-        </section>
-        <section id="contact">
-            <!-- Contact section -->
-            <h2>Contacto:</h2>
-            <div class="separator"></div>
-            <form action="">
-                <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" placeholder="E-Mail" required>
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" placeholder="Mensaje" maxlength="2500" required></textarea>
-                <div>
-                    <label for="tos">Aceptas los <a href="#">terminos y condiciones de uso</a>?</label>
-                    <input type="checkbox" name="tos" id="tos" required>
+                <p>Entrega: </p>
+                <div class="portfolio-link-container">
+                    <a href="https://github.com/BrainlessZhiv/Web-Dev/archive/refs/heads/Pr%C3%A1ctica-1.zip" class="portfolio-link">Archivo Zip</a>
+                    <a href="https://github.com/BrainlessZhiv/Web-Dev/tree/Pr%C3%A1ctica-1" class="portfolio-link">Enlace a GitHub</a>
+                    <!-- <a href="" class="portfolio-link">Versión en vivo</a> -->
                 </div>
-                <input type="submit" value="Enviar mensaje">
+                <p>Documentación: </p>
+                <div class="portfolio-link-container">
+                    <a href="" class="portfolio-link">En formato PDF</a>
+                    <!--            <a href="" class="portfolio-link">En Markdown</a>-->
+                    <a href="" class="portfolio-link">En Docx</a>
+                </div>
+                <div class="separator"></div>
 
-            </form>
-        </section>
+                <h4>Práctica 2:</h4>
+                <p>Enunciado: </p>
+                <a href="files/2_VDJ_WEB_PRACTICA_2.pdf" class="portfolio-link">En formato PDF</a>
 
-    </div>
-</main>
+                <p>Entrega: </p>
+                <div class="portfolio-link-container">
+                    <a href="https://github.com/BrainlessZhiv/Web-Dev/archive/refs/heads/master.zip" class="portfolio-link">Archivo Zip</a>
+                    <a href="https://github.com/BrainlessZhiv/Web-Dev" class="portfolio-link">Enlace a GitHub</a>
+                    <a href="https://web.zhiv.works/" class="portfolio-link">Versión en vivo</a>
+                </div>
+                <p>Documentación: </p>
+                <div class="portfolio-link-container">
+                    <a href="404.html" class="portfolio-link">En formato PDF</a>
+                    <!-- <a href="404.html" class="portfolio-link">En Markdown</a> -->
+                    <a href="404.html" class="portfolio-link">En Docx</a>
+                </div>
 
-<footer>
-    <!-- Footer section -->
-    <p><a href="https://github.com/BrainlessZhiv" id="profile">© 2024 Bryan Cueto Fernández</a></p>
-</footer>
+                <!--        Próximas entregas -->
+
+                <!--            <div class="separator"></div>-->
+
+                <!--            <h4>Práctica 3:</h4>-->
+                <!--            <p>Enunciado: </p>-->
+                <!--            <a href="404.html" class="portfolio-link">En formato PDF</a>-->
+
+                <!--            <p>Entrega: </p>-->
+                <!--            <a href="404.html" class="portfolio-link">Archivo Zip</a>-->
+                <!--            <a href="404.html" class="portfolio-link">Enlace a GitHub</a>-->
+                <!--            <a href="404.html" class="portfolio-link">Versión en vivo</a>-->
+
+                <!--            <p>Documentación: </p>-->
+                <!--            <a href="404.html" class="portfolio-link">En formato PDF</a>-->
+                <!--            <a href="404.html" class="portfolio-link">En Markdown</a>-->
+                <!--            <a href="404.html" class="portfolio-link">En Docx</a>-->
+
+                <!--            <div class="separator"></div>-->
+
+                <!--            <h4>Práctica 4:</h4>-->
+                <!--            <p>Enunciado: </p>-->
+                <!--            <a href="404.html" class="portfolio-link">En formato PDF</a>-->
+
+                <!--            <p>Entrega: </p>-->
+                <!--            <a href="404.html" class="portfolio-link">Archivo Zip</a>-->
+                <!--            <a href="404.html" class="portfolio-link">Enlace a GitHub</a>-->
+                <!--            <a href="404.html" class="portfolio-link">Versión en vivo</a>-->
+
+                <!--            <p>Documentación: </p>-->
+                <!--            <a href="404.html" class="portfolio-link">En formato PDF</a>-->
+                <!--            <a href="404.html" class="portfolio-link">En Markdown</a>-->
+                <!--            <a href="404.html" class="portfolio-link">En Docx</a>-->
+
+            </section>
+            <section id="contact">
+                <!-- Contact section -->
+                <h2>Contacto:</h2>
+                <div class="separator"></div>
+                <form action="">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email" placeholder="E-Mail" required>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" placeholder="Mensaje" maxlength="2500" required></textarea>
+                    <div>
+                        <label for="tos">Aceptas los <a href="#">terminos y condiciones de uso</a>?</label>
+                        <input type="checkbox" name="tos" id="tos" required>
+                    </div>
+                    <input type="submit" value="Enviar mensaje">
+
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer section -->
+        <p><a href="https://github.com/BrainlessZhiv" id="profile">© 2024 Bryan Cueto Fernández</a></p>
+    </footer>
 </body>
+
 </html>
